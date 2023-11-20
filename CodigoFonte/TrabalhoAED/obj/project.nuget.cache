@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "yAQmCUIFGPGaKmAhxHrdCOzXnSCX8UlgD4BBsNQI9BbDvLpd83CEutNvLEkn0iQy4EYzGLSTlTSnlYF+XZL8xQ==",
+  "dgSpecHash": "GI8Cu0iKnPY2GFUqyhDuAxZSX6F70u98kPGpENmlwFOnBLE/tVmn4Pq7m2Hw0ZUqLHA10MzMNNB2+rZRZ7fK1Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gui10\\OneDrive\\Documentos\\TrabalhoAED\\TrabalhoAED\\TrabalhoAED\\TrabalhoAED.csproj",
+  "projectFilePath": "C:\\Users\\gui10\\OneDrive\\Documentos\\TrabalhoAED\\CodigoFonte\\TrabalhoAED\\TrabalhoAED.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\gui10\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
     "C:\\Users\\gui10\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\gui10\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
     "C:\\Users\\gui10\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
     "C:\\Users\\gui10\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
   ],

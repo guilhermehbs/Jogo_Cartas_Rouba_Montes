@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gui10\\OneDrive\\Documentos\\TrabalhoAED\\TrabalhoAED\\TrabalhoAED\\TrabalhoAED.csproj": {}
+    "C:\\Users\\gui10\\OneDrive\\Documentos\\TrabalhoAED\\CodigoFonte\\TrabalhoAED\\TrabalhoAED.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gui10\\OneDrive\\Documentos\\TrabalhoAED\\TrabalhoAED\\TrabalhoAED\\TrabalhoAED.csproj": {
+    "C:\\Users\\gui10\\OneDrive\\Documentos\\TrabalhoAED\\CodigoFonte\\TrabalhoAED\\TrabalhoAED.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gui10\\OneDrive\\Documentos\\TrabalhoAED\\TrabalhoAED\\TrabalhoAED\\TrabalhoAED.csproj",
+        "projectUniqueName": "C:\\Users\\gui10\\OneDrive\\Documentos\\TrabalhoAED\\CodigoFonte\\TrabalhoAED\\TrabalhoAED.csproj",
         "projectName": "TrabalhoAED",
-        "projectPath": "C:\\Users\\gui10\\OneDrive\\Documentos\\TrabalhoAED\\TrabalhoAED\\TrabalhoAED\\TrabalhoAED.csproj",
+        "projectPath": "C:\\Users\\gui10\\OneDrive\\Documentos\\TrabalhoAED\\CodigoFonte\\TrabalhoAED\\TrabalhoAED.csproj",
         "packagesPath": "C:\\Users\\gui10\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gui10\\OneDrive\\Documentos\\TrabalhoAED\\TrabalhoAED\\TrabalhoAED\\obj\\",
+        "outputPath": "C:\\Users\\gui10\\OneDrive\\Documentos\\TrabalhoAED\\CodigoFonte\\TrabalhoAED\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\gui10\\AppData\\Roaming\\NuGet\\NuGet.Config",
