@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace TrabalhoAED
 {
-    internal class Carta
+    class Carta
     {
+        private int numero;
+        private string naipe;
+
+        public Carta(int numero, string naipe)
+        {
+            this.numero = numero;
+            this.naipe = naipe;
+        }
     }
 }
