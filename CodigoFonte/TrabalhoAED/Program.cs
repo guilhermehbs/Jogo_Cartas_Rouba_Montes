@@ -13,6 +13,7 @@ namespace TrabalhoAED
             Jogo jogo = new Jogo();
 
             jogo.ComecarJogo(3, 52);
+
         }
     }
 }
