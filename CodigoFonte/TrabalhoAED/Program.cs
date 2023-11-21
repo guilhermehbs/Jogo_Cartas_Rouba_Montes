@@ -10,7 +10,9 @@ namespace TrabalhoAED
     {
         static void Main(string[] args)
         {
+            Jogo jogo = new Jogo();
 
+            jogo.ComecarJogo(3, 52);
         }
     }
 }

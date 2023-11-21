@@ -12,13 +12,14 @@ namespace TrabalhoAED
         private int posicao { get; set; }  
         private int numeroDeCartas{ get; set; }
 
-        Queue<int> rankingUltimas5 = new Queue<int>(5);
+        Queue<int> rankingUltimas5;
 
         //implementar fila contendo ranking do jogador nas ultimas 5 partidas
 
         public Jogador(string nome) 
         {
             this.nome = nome;
+            this.rankingUltimas5 = new Queue<int>(5);
         }
 
     }
