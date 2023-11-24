@@ -33,11 +33,12 @@ namespace TrabalhoAED
         tudo isso em um arquivo e no terminal
         */
 
-        public void ComecarJogo(int quantidadeJogadores, int quantidadeDeCartas)
+        //metodo que inicia o jogo, gerando um baralho de acordo com a quantidade de cartas e gerando a fila de jogadores
+        public void ComecarJogo(int quantidadeJogadores, int quantidadeDeBaralhos)
         {
-            if(quantidadeDeCartas > 52 || quantidadeDeCartas < 1)
+            if (quantidadeDeBaralhos < 1)
             {
-                throw new Exception("Quantidade de cartas errada (deve ser maior que 0 e menor que 53)");
+                throw new Exception("Quantidade de baralhos errada (deve ser maior que 0)");
             }
 
             if (quantidadeJogadores < 2)
@@ -47,38 +48,78 @@ namespace TrabalhoAED
 
             filaDeJogadores = GerarFilaDeJogadores(quantidadeJogadores);
 
-            monte = GerarBaralho(quantidadeDeCartas);
+            monte = GerarBaralho(quantidadeDeBaralhos);
+
+            // foreach (Carta carta in monte)
+            // {
+            //     Console.WriteLine(carta);
+            // }
+
             descarte = new Stack<Carta>();
+
+            bool jogoAcabou = false;
+            while(!jogoAcabou){
+                Jogador jogadorAtual = filaDeJogadores.Dequeue();
+                Console.WriteLine($"Jogador a jogar: {jogadorAtual}");
+                
+                filaDeJogadores.Enqueue(jogadorAtual);
+            } // so vai sair daqui quando o jogo acabar, dito isso , se vc rodar  isso aqui AGORA vai crashar kkkkkkk
+
         }
 
-        public Stack<Carta> GerarBaralho(int quantidadeDeCartas)
+
+        //metodo que gera um baralho já embaralhado para inicio do jogo
+        public Stack<Carta> GerarBaralho(int quantidadeDeBaralhos)
         {
+            //int quantidadeDeCartas = quantidadeDeBaralhos * 53;
+
             Stack<Carta> pilhaDeCartas = new Stack<Carta>();
 
-            string[] naipes = {"Paus", "Espadas", "Copas", "Ouros" };
+            string[] naipes = { "Paus", "Espadas", "Copas", "Ouros" };
 
-            string[] valores = { "Às", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito", "Nove", "Dez", "Dama", "Valete", "Rei" };
+            string[] valores = { "Coringa", "Às", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito", "Nove", "Dez", "Dama", "Valete", "Rei" };
 
             Random rnd = new Random();
-
-            int totalCartas = 0;
-
-            while(totalCartas != quantidadeDeCartas)
+            for (int i = 0; i < quantidadeDeBaralhos; i++)
             {
-                int randomNaipe = rnd.Next(0, 4);
-                int randomValor = rnd.Next(0, 13);
-
-                Carta carta = new Carta(valores[randomValor], naipes[randomNaipe]);
-
-                if (!pilhaDeCartas.Contains(carta))
+                int totalCartas = 0;
+                Stack<Carta> pilhaTemp = new Stack<Carta>();
+                while (totalCartas != 53)
                 {
-                    pilhaDeCartas.Push(carta);
-                    totalCartas++;
+                    int randomNaipe = rnd.Next(0, 4);
+                    int randomValor = rnd.Next(0, 14);
+
+                    Carta carta;
+
+                    if (randomValor != 0)
+                    {
+                        carta = new Carta(valores[randomValor], naipes[randomNaipe]);
+                    }
+                    else
+                    {
+                        carta = new Carta(valores[randomValor]);
+                    }
+
+
+
+                    if (!pilhaTemp.Contains(carta))
+                    {
+                        pilhaTemp.Push(carta);
+                        totalCartas++;
+                    }
+
+                }
+                foreach (Carta cartaTemp in pilhaTemp)
+                {
+                    pilhaDeCartas.Push(cartaTemp);
                 }
             }
-
             return pilhaDeCartas;
+
         }
+
+
+
 
         public Queue<Jogador> GerarFilaDeJogadores(int quantidade)
         {
@@ -86,7 +127,7 @@ namespace TrabalhoAED
 
             Console.WriteLine(new String('-', 9) + "Definição de Jogadores" + new String('-', 9));
 
-            for(int i = 0; i < quantidade; i++)
+            for (int i = 0; i < quantidade; i++)
             {
                 Console.Write($"Digite o nome do {i + 1}° jogador: ");
                 string nome = Console.ReadLine();

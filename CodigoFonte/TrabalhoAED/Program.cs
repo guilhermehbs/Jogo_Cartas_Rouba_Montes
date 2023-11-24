@@ -12,7 +12,8 @@ namespace TrabalhoAED
         {
             Jogo jogo = new Jogo();
 
-            jogo.ComecarJogo(3, 52);
+            jogo.ComecarJogo(2, 3);
+            
 
             CriarCarta();
 
