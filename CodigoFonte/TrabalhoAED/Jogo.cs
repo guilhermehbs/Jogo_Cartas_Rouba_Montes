@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +12,7 @@ namespace TrabalhoAED
     {
 
         static Stack<Carta> monte;
-        static Stack<Carta> descarte;
+        static List<Carta> descarte;
         static Queue<Jogador> filaDeJogadores;
         //escolher a quantidade de cartas
         //escolher a quantidade de jogadores
@@ -47,6 +48,8 @@ namespace TrabalhoAED
             }
 
             filaDeJogadores = GerarFilaDeJogadores(quantidadeJogadores);
+            
+
 
             monte = GerarBaralho(quantidadeDeBaralhos);
 
@@ -55,14 +58,83 @@ namespace TrabalhoAED
             //     Console.WriteLine(carta);
             // }
 
-            descarte = new Stack<Carta>();
+            descarte = new List<Carta>();
 
             bool jogoAcabou = false;
+
+
+            List<Jogador> listaDeJogadores = new List<Jogador>();
+            for (int i = 0; i < quantidadeJogadores; i++)
+            {
+
+                Jogador jogadorAtual = filaDeJogadores.Dequeue();
+                listaDeJogadores.Add(jogadorAtual);
+
+                for (int j = 0; j < 4; j++)
+                {
+                    jogadorAtual.adicionarCarta(monte.Pop());
+                }
+                filaDeJogadores.Enqueue(jogadorAtual);
+            }
+
+            
+
+            int k = 0;
             while(!jogoAcabou){
                 Jogador jogadorAtual = filaDeJogadores.Dequeue();
                 Console.WriteLine($"Jogador a jogar: {jogadorAtual}");
+
+                //mostrar carta na mão
+                Console.WriteLine($"\nCartas na sua mão:\n");
+                jogadorAtual.mostrarLista();
+               
+                foreach(Jogador jogador in listaDeJogadores)
+                {
+                    Console.WriteLine("Topo do jogador: " + jogador);
+                    jogador.mostrarTopo();
+                }
+
+                //mostrar descarte
+                if(descarte.Count() == 0)
+                {
+                    Console.WriteLine("Descarte vazio");
+                }
+                else
+                {
+                    Console.WriteLine("Descarte:\n");
+                    foreach (Carta carta in descarte)
+                    {
+                        Console.WriteLine(carta);
+                    }
+                }
+
+                int opcao = 0;
+
+                Console.WriteLine("Menu:");
+                Console.WriteLine("1 - Adicionar carta na área de descarte");
+                Console.WriteLine("2 - Roubar monte de um jogador");
+                Console.WriteLine("3 - Formar monte com carta da área de descarte");
+                Console.WriteLine("4 - Formar monte com carta na sua mão");
+                opcao = int.Parse(Console.ReadLine());
+
+                switch (opcao)
+                {
+
+                }
+
+                //Console.WriteLine("\nMontão:\n\n" + monte.Peek());
+
+
+                Console.WriteLine("\nMonte dos outros jogadores:\n");
                 
                 filaDeJogadores.Enqueue(jogadorAtual);
+
+                k++;
+                if(k == 2)
+                {
+                    jogoAcabou = true;
+                }
+
             } // so vai sair daqui quando o jogo acabar, dito isso , se vc rodar  isso aqui AGORA vai crashar kkkkkkk
 
         }

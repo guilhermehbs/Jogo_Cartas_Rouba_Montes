@@ -10,7 +10,11 @@ namespace TrabalhoAED
     {
         private string nome { get; set; }
         private int posicao { get; set; }  
-        private int numeroDeCartas{ get; set; }
+        private int numeroDeCartasNaMao{ get; set; }
+
+        public Stack<Carta> monteJogador { get; set; }
+
+        public List<Carta> cartasNaMao;
 
         Queue<int> rankingUltimas5;
 
@@ -21,7 +25,46 @@ namespace TrabalhoAED
         {
             this.nome = nome;
             this.rankingUltimas5 = new Queue<int>(5);
+            this.cartasNaMao = new List<Carta>();
+            this.monteJogador = new Stack<Carta>();
         }
+
+        public void adicionarCarta(Carta carta)
+        {
+            cartasNaMao.Add(carta);
+            numeroDeCartasNaMao++;
+        }
+
+        public void removerCarta(Carta carta)
+        {
+            cartasNaMao.Remove(carta);
+            numeroDeCartasNaMao--;
+        }
+
+        public void mostrarLista()
+        {
+            foreach(Carta carta in cartasNaMao)
+            {
+                Console.WriteLine(carta);
+            }
+        }
+
+        public void mostrarTopo()
+        {
+            if (monteJogador.Count() == 0)
+            {
+                Console.WriteLine("Descarte vazio");
+            }
+            else
+            {
+                Console.WriteLine("Descarte:\n");
+                foreach (Carta carta in monteJogador)
+                {
+                    Console.WriteLine(carta);
+                }
+            }
+        }
+
         public override string ToString()
         {
             return $"Nome: {nome} ";

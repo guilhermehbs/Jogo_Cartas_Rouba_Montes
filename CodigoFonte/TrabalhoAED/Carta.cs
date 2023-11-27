@@ -29,7 +29,6 @@ namespace TrabalhoAED
         //metodo para sobreescrever o Equals padrão, usado para verificar a igualdade entre cartas
         public override bool Equals(object obj)
         {
-
             Carta outraCarta = (Carta)obj;
 
             return (valor == outraCarta.valor) && (naipe == outraCarta.naipe);
