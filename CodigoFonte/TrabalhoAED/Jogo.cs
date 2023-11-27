@@ -9,13 +9,9 @@ namespace TrabalhoAED
 {
     class Jogo
     {
-
         static Stack<Carta> monte;
         static Stack<Carta> descarte;
         static Queue<Jogador> filaDeJogadores;
-        //escolher a quantidade de cartas
-        //escolher a quantidade de jogadores
-
 
         /*
         apresentar ganhadores (nome, posição e numero de cartas na mão), apresentar de forma ordenada as cartas presentes na mão do jogador
