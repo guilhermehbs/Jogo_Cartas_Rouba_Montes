@@ -97,11 +97,11 @@ namespace TrabalhoAED
                 //mostrar descarte
                 if(descarte.Count() == 0)
                 {
-                    Console.WriteLine("Descarte vazio");
+                    Console.WriteLine("Área de Descarte vazia");
                 }
                 else
                 {
-                    Console.WriteLine("Descarte:\n");
+                    Console.WriteLine("Área de Descarte:\n");
                     foreach (Carta carta in descarte)
                     {
                         Console.WriteLine(carta);
@@ -109,6 +109,9 @@ namespace TrabalhoAED
                 }
 
                 int opcao = 0;
+                Carta cartaAtual = monte.Pop();
+
+                Console.WriteLine("Carta atual: " + cartaAtual);
 
                 Console.WriteLine("Menu:");
                 Console.WriteLine("1 - Adicionar carta na área de descarte");
@@ -119,7 +122,12 @@ namespace TrabalhoAED
 
                 switch (opcao)
                 {
+                    case 1:
+                        descarte.Add(cartaAtual);
+                        break;
 
+                    case 2:
+                        break;
                 }
 
                 //Console.WriteLine("\nMontão:\n\n" + monte.Peek());
