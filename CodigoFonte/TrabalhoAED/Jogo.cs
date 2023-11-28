@@ -147,9 +147,8 @@ namespace TrabalhoAED
 
         }
 
-
         //metodo que gera um baralho já embaralhado para inicio do jogo
-        public Stack<Carta> GerarBaralho(int quantidadeDeBaralhos)
+        private Stack<Carta> GerarBaralho(int quantidadeDeBaralhos)
         {
             //int quantidadeDeCartas = quantidadeDeBaralhos * 53;
 
@@ -157,21 +156,21 @@ namespace TrabalhoAED
 
             string[] naipes = { "Paus", "Espadas", "Copas", "Ouros" };
 
-            string[] valores = { "Coringa", "Às", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito", "Nove", "Dez", "Dama", "Valete", "Rei" };
+            string[] valores = { "Coringa", "Coringa", "Às", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito", "Nove", "Dez", "Dama", "Valete", "Rei" };
 
             Random rnd = new Random();
             for (int i = 0; i < quantidadeDeBaralhos; i++)
             {
                 int totalCartas = 0;
                 Stack<Carta> pilhaTemp = new Stack<Carta>();
-                while (totalCartas != 53)
+                while (totalCartas != 54)
                 {
                     int randomNaipe = rnd.Next(0, 4);
-                    int randomValor = rnd.Next(0, 14);
+                    int randomValor = rnd.Next(0, 15);
 
                     Carta carta;
 
-                    if (randomValor != 0)
+                    if (randomValor != 0 || randomValor != 1)
                     {
                         carta = new Carta(valores[randomValor], naipes[randomNaipe]);
                     }
@@ -198,10 +197,7 @@ namespace TrabalhoAED
 
         }
 
-
-
-
-        public Queue<Jogador> GerarFilaDeJogadores(int quantidade)
+        private Queue<Jogador> GerarFilaDeJogadores(int quantidade)
         {
             Queue<Jogador> fila = new Queue<Jogador>();
 
