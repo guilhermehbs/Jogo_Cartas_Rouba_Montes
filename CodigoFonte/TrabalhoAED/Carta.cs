@@ -26,6 +26,16 @@ namespace TrabalhoAED
             naipe = null;
         }
 
+        //Obter valor do VALOR e NAIPE para comparação na classe jogo
+
+        public string obterValor(){
+            return valor;
+        }
+
+        public string obterNaipe(){
+            return naipe;
+        }
+
         //metodo para sobreescrever o Equals padrão, usado para verificar a igualdade entre cartas
         public override bool Equals(object obj)
         {

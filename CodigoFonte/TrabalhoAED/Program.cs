@@ -12,7 +12,12 @@ namespace TrabalhoAED
         {
             Jogo jogo = new Jogo();
 
-            jogo.ComecarJogo(2, 3);
+            Console.Write("Digite a quantidade de jogadores: ");
+            int qntJogadores = int.Parse(Console.ReadLine());
+            Console.Write("Digite a quantidade de baralhos a serem utilizados na partida: ");
+            int qntBaralhos = int.Parse(Console.ReadLine());
+
+            jogo.ComecarJogo(qntJogadores, qntBaralhos);
             
 
             CriarCarta();

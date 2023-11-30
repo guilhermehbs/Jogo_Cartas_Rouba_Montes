@@ -53,21 +53,20 @@ namespace TrabalhoAED
         {
             if (monteJogador.Count() == 0)
             {
-                Console.WriteLine("Descarte vazio");
+                Console.WriteLine("Não há cartas no monte do jogador");
             }
             else
             {
-                Console.WriteLine("Descarte:\n");
-                foreach (Carta carta in monteJogador)
-                {
-                    Console.WriteLine(carta);
-                }
+                    foreach(var carta in monteJogador){
+                        Console.WriteLine("Carta do topo: " + carta);
+                        break;
+                    }
             }
         }
 
         public override string ToString()
         {
-            return $"Nome: {nome} ";
+            return $" {nome} ";
         }
     }
 }

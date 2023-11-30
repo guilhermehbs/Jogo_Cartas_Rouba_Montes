@@ -77,6 +77,21 @@ namespace TrabalhoAED
                 filaDeJogadores.Enqueue(jogadorAtual);
             }
 
+
+            Queue<Carta> cartaAtual = new Queue<Carta>();
+
+
+            //cartas na mesa conforme quantidade de jogadores
+            if(quantidadeJogadores > 4){
+                for(int i = 0; i < 8; i++){
+                    cartaAtual.Enqueue(monte.Pop());
+                }
+            }
+            else{
+                for(int i = 0; i < 4; i++){
+                    cartaAtual.Enqueue(monte.Pop());
+                }
+            }
             
 
             int k = 0;
@@ -85,15 +100,31 @@ namespace TrabalhoAED
                 Console.WriteLine($"Jogador a jogar: {jogadorAtual}");
 
                 //mostrar carta na mão
-                Console.WriteLine($"\nCartas na sua mão:\n");
+                Console.WriteLine($"\nCartas na sua mão:");
                 jogadorAtual.mostrarLista();
                
+                Console.WriteLine(" ");
                 foreach(Jogador jogador in listaDeJogadores)
                 {
-                    Console.WriteLine("Topo do jogador: " + jogador);
+                    Console.WriteLine($"Topo do jogador {jogador}: ");
                     jogador.mostrarTopo();
+                    break;
                 }
 
+                Console.WriteLine(" ");
+
+                int opcao = 0;
+
+                
+                Console.WriteLine(" ");
+                Console.WriteLine("======MESA======");
+                Console.WriteLine("Cartas na mesa: ");
+
+                foreach(var cartas in cartaAtual){
+                    Console.WriteLine(cartas);
+                }
+
+                Console.WriteLine(" ");
                 //mostrar descarte
                 if(descarte.Count() == 0)
                 {
@@ -108,11 +139,8 @@ namespace TrabalhoAED
                     }
                 }
 
-                int opcao = 0;
-                Carta cartaAtual = monte.Pop();
-
-                Console.WriteLine("Carta atual: " + cartaAtual);
-
+                Console.WriteLine("===============");
+                Console.WriteLine(" ");
                 Console.WriteLine("Menu:");
                 Console.WriteLine("1 - Adicionar carta na área de descarte");
                 Console.WriteLine("2 - Roubar monte de um jogador");
@@ -123,7 +151,19 @@ namespace TrabalhoAED
                 switch (opcao)
                 {
                     case 1:
-                        descarte.Add(cartaAtual);
+/*                        Console.Write("Digite a carta a ser inserida no descarte (valor naipe): ");
+                        string valor = Console.ReadLine();
+                        string naipe = Console.ReadLine();
+
+                        foreach(var carta in jogadorAtual.cartasNaMao){
+                            if(carta.obterValor() == valor && carta.obterNaipe() == naipe){
+                                descarte.Add(jogadorAtual.removerCarta(carta));
+                                break;
+                            }
+                            else{
+                                Console.WriteLine("Carta não encontrada na mão do jogador atual");
+                            }
+                        } */
                         break;
 
                     case 2:
