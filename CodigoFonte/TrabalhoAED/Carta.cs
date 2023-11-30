@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,8 +10,8 @@ namespace TrabalhoAED
 {
     class Carta
     {
-        private string valor { get; set; }
-        private string naipe { get; set; }
+        private string valor;
+        private string naipe;
 
         //Construtor das demais cartas
         public Carta(string valor, string naipe)
@@ -24,6 +25,11 @@ namespace TrabalhoAED
         {
             this.valor = valor;
             naipe = null;
+        }
+
+        public string getValor()
+        {
+            return valor;
         }
 
         //metodo para sobreescrever o Equals padrão, usado para verificar a igualdade entre cartas

@@ -8,13 +8,12 @@ namespace TrabalhoAED
 {
     class Jogador
     {
-        private string nome { get; set; }
-        private int posicao { get; set; }  
-        private int numeroDeCartasNaMao{ get; set; }
+        private string nome;
+        private int posicao;
+        private int numeroDeCartasNaMao;
 
-        public Stack<Carta> monteJogador { get; set; }
+        public Stack<Carta> monteJogador;
 
-        public List<Carta> cartasNaMao;
 
         Queue<int> rankingUltimas5;
 
@@ -25,49 +24,40 @@ namespace TrabalhoAED
         {
             this.nome = nome;
             this.rankingUltimas5 = new Queue<int>(5);
-            this.cartasNaMao = new List<Carta>();
             this.monteJogador = new Stack<Carta>();
         }
 
-        public void adicionarCarta(Carta carta)
+        public void adicionarCartaNoMonte(Carta carta)
         {
-            cartasNaMao.Add(carta);
-            numeroDeCartasNaMao++;
+            monteJogador.Push(carta);
         }
 
-        public void removerCarta(Carta carta)
+        public void adicionarCartas(Carta carta1, Carta carta2)
         {
-            cartasNaMao.Remove(carta);
-            numeroDeCartasNaMao--;
-        }
-
-        public void mostrarLista()
-        {
-            foreach(Carta carta in cartasNaMao)
-            {
-                Console.WriteLine(carta);
-            }
+            monteJogador.Push(carta1);
+            monteJogador.Push(carta2);
         }
 
         public void mostrarTopo()
         {
             if (monteJogador.Count() == 0)
             {
-                Console.WriteLine("Descarte vazio");
+                Console.WriteLine("Monte vazio");
             }
             else
             {
-                Console.WriteLine("Descarte:\n");
-                foreach (Carta carta in monteJogador)
-                {
-                    Console.WriteLine(carta);
-                }
+                Console.WriteLine("Carta no topo: " + monteJogador.Peek);
             }
+        }
+
+        public Carta getTopo()
+        {
+            return monteJogador.Peek();
         }
 
         public override string ToString()
         {
-            return $"Nome: {nome} ";
+            return nome;
         }
     }
 }
