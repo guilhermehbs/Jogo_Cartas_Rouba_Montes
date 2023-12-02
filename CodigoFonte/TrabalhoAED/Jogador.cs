@@ -38,6 +38,16 @@ namespace TrabalhoAED
             monteJogador.Push(carta2);
         }
 
+        public void adicionarMonte(Stack<Carta> monte)
+        {
+                monteJogador.Push(monte.Pop());
+        }
+
+        public void limparMonte()
+        {
+            monteJogador.Clear();
+        }
+
         public void mostrarTopo()
         {
             if (monteJogador.Count() == 0)
@@ -46,13 +56,25 @@ namespace TrabalhoAED
             }
             else
             {
-                Console.WriteLine("Carta no topo: " + monteJogador.Peek);
+                Console.WriteLine("Carta no topo: " + monteJogador.Peek());
             }
         }
 
         public Carta getTopo()
         {
-            return monteJogador.Peek();
+            if (monteJogador.Count() == 0)
+            {
+                return null;
+            }
+            else
+            {
+                return monteJogador.Peek();
+            }
+        }
+
+        public string getNome()
+        {
+            return nome;
         }
 
         public override string ToString()

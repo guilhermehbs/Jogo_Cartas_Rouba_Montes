@@ -45,7 +45,7 @@ namespace TrabalhoAED
             }
 
             filaDeJogadores = GerarFilaDeJogadores(quantidadeJogadores);
-            
+
 
 
             monte = GerarBaralho(quantidadeDeBaralhos);
@@ -53,7 +53,7 @@ namespace TrabalhoAED
             cartasDaMesa = new List<Carta>();
 
 
-            for(int i = 0; i < 4; i++)
+            for (int i = 0; i < 4; i++)
             {
                 cartasDaMesa.Add(monte.Pop());
             }
@@ -76,14 +76,15 @@ namespace TrabalhoAED
                 filaDeJogadores.Enqueue(jogadorAtual);
             }
 
-            while(!jogoAcabou){
+            while (!jogoAcabou)
+            {
                 Jogador jogadorAtual = filaDeJogadores.Dequeue();
                 Console.WriteLine($"\nJogador a jogar: {jogadorAtual}");
 
                 bool vezDoJogador = true;
 
                 while (vezDoJogador)
-                { 
+                {
                     foreach (Jogador jogador in listaDeJogadores)
                     {
                         Console.WriteLine("\nTopo do jogador: " + jogador + "\n");
@@ -93,14 +94,21 @@ namespace TrabalhoAED
                     int opcao = 0;
                     Carta cartaAtual = monte.Pop();
 
+                    bool cartaCoringa = false;
+
+                    if(cartaAtual.getValor() == "Coringa")
+                    {
+                        cartaCoringa = true;
+                    }
+
                     bool existe1 = false;
                     bool existe2 = false;
 
                     Console.WriteLine("\nCarta atual: " + cartaAtual + "\n");
 
-                    foreach(Carta carta in cartasDaMesa)
+                    foreach (Carta carta in cartasDaMesa)
                     {
-                        if(carta == cartaAtual)
+                        if (carta.getValor() == cartaAtual.getValor())
                         {
                             existe1 = true;
                             break;
@@ -108,16 +116,18 @@ namespace TrabalhoAED
 
                     }
 
-                    for(int i = 0; i < listaDeJogadores.Count; i++)
+                    for (int i = 0; i < listaDeJogadores.Count; i++)
                     {
-                        if(cartaAtual == listaDeJogadores[i].getTopo())
+                        if (listaDeJogadores[i].getTopo() != null && cartaAtual.getValor() == listaDeJogadores[i].getTopo().getValor())
                         {
                             existe2 = true;
                             break;
                         }
                     }
 
-                    if (existe1 && existe2)
+                    Console.WriteLine($"{existe2}, {existe1}");
+
+                    if (existe1 || existe2)
                     {
                         Console.WriteLine("Menu:");
                         Console.WriteLine("1 - Formar monte com carta na mesa");
@@ -136,7 +146,7 @@ namespace TrabalhoAED
 
                                 Carta cartaDesejada = cartasDaMesa[opcaoCarta - 1];
 
-                                if (cartaDesejada.getValor() == cartaAtual.getValor())
+                                if (cartaDesejada.getValor() == cartaAtual.getValor() || cartaCoringa)
                                 {
                                     jogadorAtual.adicionarCartas(cartaDesejada, cartaAtual);
                                 }
@@ -147,10 +157,24 @@ namespace TrabalhoAED
                                 break;
 
                             case 2:
+                                Console.Write("Digite o nome do jogador para roubar o monte: ");
+                                string nomeJogadorRoubo = Console.ReadLine();
+                                Jogador jogadorRoubo = listaDeJogadores.Find(j => j.getNome() == nomeJogadorRoubo);
+
+                                if(cartaAtual.getValor() == jogadorRoubo.getTopo().getValor() || cartaCoringa)
+                                {
+                                    jogadorAtual.adicionarMonte(jogadorRoubo.monteJogador);
+                                    jogadorRoubo.limparMonte();
+                                }
+                                else
+                                {
+                                    Console.WriteLine("A carta não é igual o monte do jogador selecionado");
+                                }
+
                                 break;
 
                             case 3:
-                                if (cartaAtual.getValor() == jogadorAtual.getTopo().getValor())
+                                if (cartaAtual.getValor() == jogadorAtual.getTopo().getValor() || cartaCoringa)
                                 {
                                     jogadorAtual.adicionarCartaNoMonte(cartaAtual);
                                 }
@@ -165,15 +189,16 @@ namespace TrabalhoAED
                     }
                     else
                     {
+                        Console.WriteLine("Com essa carta atual não é possível fazer nenhuma jogada, vez do proximo jogador!");
                         vezDoJogador = false;
                         cartasDaMesa.Add(cartaAtual);
                     }
                 }
 
-                filaDeJogadores.Dequeue();
                 filaDeJogadores.Enqueue(jogadorAtual);
 
-                if(monte.Count == 0)
+
+                if (monte.Count == 0)
                 {
                     jogoAcabou = true;
                 }
@@ -227,7 +252,6 @@ namespace TrabalhoAED
                 }
             }
             return pilhaDeCartas;
-
         }
 
         private Queue<Jogador> GerarFilaDeJogadores(int quantidade)
@@ -267,7 +291,7 @@ namespace TrabalhoAED
             Console.Write("Digite a opção desejada: ");
             int opcao = int.Parse(Console.ReadLine());
 
-            while(opcao < 1 || opcao > lista.Count)
+            while (opcao < 1 || opcao > lista.Count)
             {
                 Console.WriteLine("Opção inválida");
                 Console.Write("Digite a opção desejada: ");
