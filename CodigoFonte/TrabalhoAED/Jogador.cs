@@ -10,14 +10,11 @@ namespace TrabalhoAED
     {
         private string nome;
         private int posicao;
-        private int numeroDeCartasNaMao;
+        private int numeroDeCartasNoMonte;
 
         public Stack<Carta> monteJogador;
 
-
-        Queue<int> rankingUltimas5;
-
-        //implementar fila contendo ranking do jogador nas ultimas 5 partidas
+        public Queue<int> rankingUltimas5;
 
         //Construtor para o jogador
         public Jogador(string nome) 
@@ -27,7 +24,7 @@ namespace TrabalhoAED
             this.monteJogador = new Stack<Carta>();
         }
 
-        public void adicionarCartaNoMonte(Carta carta)
+        public void adicionarCarta(Carta carta)
         {
             monteJogador.Push(carta);
         }
@@ -75,6 +72,21 @@ namespace TrabalhoAED
         public string getNome()
         {
             return nome;
+        }
+
+        public int getQuantidadeDeCartasNoMonte()
+        {
+            return numeroDeCartasNoMonte;
+        }
+
+        public void setQuantidadeDeCartasNoMonte(int quantidadeDeCarta)
+        {
+            this.numeroDeCartasNoMonte = quantidadeDeCarta;
+        }
+
+        public void setPosicao(int posicao)
+        {
+            this.posicao = posicao;
         }
 
         public override string ToString()

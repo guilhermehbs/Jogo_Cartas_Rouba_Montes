@@ -13,13 +13,6 @@ namespace TrabalhoAED
         private string valor;
         private string naipe;
 
-        //Construtor das demais cartas
-        public Carta(string valor, string naipe)
-        {
-            this.valor = valor;
-            this.naipe = naipe;
-        }
-
         //Construtor para o coringa
         public Carta(string valor)
         {
@@ -27,12 +20,19 @@ namespace TrabalhoAED
             naipe = null;
         }
 
+        //Construtor das demais cartas
+        public Carta(string valor, string naipe)
+        {
+            this.valor = valor;
+            this.naipe = naipe;
+        }
+
         public string getValor()
         {
             return valor;
         }
 
-        //metodo para sobreescrever o Equals padrão, usado para verificar a igualdade entre cartas
+        //Método para sobreescrever o Equals padrão, usado para verificar a igualdade entre cartas
         public override bool Equals(object obj)
         {
             Carta outraCarta = (Carta)obj;

@@ -10,28 +10,35 @@ namespace TrabalhoAED
     {
         static void Main(string[] args)
         {
-            Jogo jogo = new Jogo();
+            Console.WriteLine(new String('-', 9) + "Inicio do jogo" + new String('-', 9));
 
-            jogo.ComecarJogo(2, 3);
-            
+            Console.Write("Digite a quantidade de jogadores: ");
+            int quantidadeDeJogadores = int.Parse(Console.ReadLine());
 
-            CriarCarta();
+            Console.Write("Digite a quantidade de baralhos que vão ser usados no jogo: ");
+            int quantidadeDeBaralhos = int.Parse(Console.ReadLine());
+
+            Console.WriteLine(new String('-', 32));
+
+            Jogo jogo = new Jogo(quantidadeDeJogadores, quantidadeDeBaralhos);
+
+            jogo.Jogar();
 
         }
 
-        static void CriarCarta()
-        {
-            Console.WriteLine(new String('*', 10));
-            Console.WriteLine("*" + " 4" + new String(' ', 6) + "*");
-            Console.WriteLine("*" + " " + new String('*', 6) + " " + "*");
-            for (int i = 0; i < 4; i++)
-            {
-                Console.WriteLine("*" + " " + "*" + new String(' ', 4) + "*" + " " + "*");
+        //static void CriarCarta()
+        //{
+        //    Console.WriteLine(new String('*', 10));
+        //    Console.WriteLine("*" + " 4" + new String(' ', 6) + "*");
+        //    Console.WriteLine("*" + " " + new String('*', 6) + " " + "*");
+        //    for (int i = 0; i < 4; i++)
+        //    {
+        //        Console.WriteLine("*" + " " + "*" + new String(' ', 4) + "*" + " " + "*");
 
-            }
-            Console.WriteLine("*" + " " + new String('*', 6) + " " + "*");
-            Console.WriteLine("*" + new String(' ', 6) + "4 " + "*");
-            Console.WriteLine(new String('*', 10));
-        }
+        //    }
+        //    Console.WriteLine("*" + " " + new String('*', 6) + " " + "*");
+        //    Console.WriteLine("*" + new String(' ', 6) + "4 " + "*");
+        //    Console.WriteLine(new String('*', 10));
+        //}
     }
 }
