@@ -10,7 +10,7 @@ namespace TrabalhoAED
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(new String('-', 9) + "Inicio do jogo" + new String('-', 9));
+            Console.WriteLine(new String('-', 13) + "Inicio do jogo" + new String('-', 13));
 
             Console.Write("Digite a quantidade de jogadores: ");
             int quantidadeDeJogadores = int.Parse(Console.ReadLine());
@@ -18,12 +18,11 @@ namespace TrabalhoAED
             Console.Write("Digite a quantidade de baralhos que vão ser usados no jogo: ");
             int quantidadeDeBaralhos = int.Parse(Console.ReadLine());
 
-            Console.WriteLine(new String('-', 32));
+            Console.WriteLine(new String('-', 40));
 
             Jogo jogo = new Jogo(quantidadeDeJogadores, quantidadeDeBaralhos);
 
             jogo.Jogar();
-
         }
 
         //static void CriarCarta()

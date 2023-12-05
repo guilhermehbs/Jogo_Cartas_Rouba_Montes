@@ -14,8 +14,8 @@ namespace TrabalhoAED
         static Stack<Carta> baralho;
         static Queue<Jogador> filaDeJogadores;
 
-        static int quantidadeDeJogadores;
-        static int quantidadeDeBaralhos;
+        int quantidadeDeJogadores;
+        int quantidadeDeBaralhos;
 
         // Construtor usado para gerar um novo jogo, que vai gerar as cartas e a fila de jogadores
         public Jogo(int quantidadeDeJogadores, int quantidadeDeBaralhos)
@@ -32,8 +32,8 @@ namespace TrabalhoAED
                 throw new Exception("Quantidade de jogadores deve ser maior que 2");
             }
 
-            quantidadeDeJogadores = quantidadeDeJogadores;
-            quantidadeDeBaralhos = quantidadeDeBaralhos;
+            this.quantidadeDeJogadores = quantidadeDeJogadores;
+            this.quantidadeDeBaralhos = quantidadeDeBaralhos;
 
             // Gerando a fila de jogadores
             filaDeJogadores = GerarFilaDeJogadores(quantidadeDeJogadores);
@@ -64,10 +64,6 @@ namespace TrabalhoAED
                 log.WriteLine(carta);
             }
 
-            Console.WriteLine("Cartas na mesa:");
-
-            ImprimirListaDeCartas(cartasDaMesa);
-
             //Gerando e preenchendo uma lista de jogadores
             List<Jogador> listaDeJogadores = new List<Jogador>();
 
@@ -95,7 +91,6 @@ namespace TrabalhoAED
 
             log.WriteLine($"Carta: {cartaInicial} foi adicionada no monte do {jogadorInicial}");
 
-
             bool jogoAcabou = false;
 
             //Repetição até acabar as cartas do baralho
@@ -103,7 +98,9 @@ namespace TrabalhoAED
             {
 
                 Jogador jogadorAtual = filaDeJogadores.Dequeue();
+                Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine($"\nJogador a jogar: {jogadorAtual}");
+                Console.ResetColor();
                 log.WriteLine($"Jogador a jogar: {jogadorAtual}");
 
                 bool vezDoJogador = true;
@@ -111,13 +108,15 @@ namespace TrabalhoAED
                 while (vezDoJogador)
                 {
 
-                    Console.WriteLine("Cartas na mesa: ");
+                    Console.WriteLine("\nCartas na mesa: ");
 
                     ImprimirListaDeCartas(cartasDaMesa);
 
                     foreach (Jogador jogador in listaDeJogadores)
                     {
+                        Console.ForegroundColor= ConsoleColor.Cyan;
                         Console.WriteLine("\nTopo do jogador: " + jogador + "\n");
+                        Console.ResetColor();
                         jogador.mostrarTopo();
                     }
 
@@ -134,6 +133,9 @@ namespace TrabalhoAED
                         break;
                     }
 
+                    Console.ForegroundColor = ConsoleColor.Magenta;
+                    Console.WriteLine("\nCarta atual: " + cartaAtual + "\n");
+                    Console.ResetColor();
                     log.WriteLine($"Carta da rodada: {cartaAtual}");
 
                     bool cartaCoringa = false;
@@ -146,8 +148,6 @@ namespace TrabalhoAED
                     bool existe1 = false;
                     bool existe2 = false;
                     bool existe3 = false;
-
-                    Console.WriteLine("\nCarta atual: " + cartaAtual + "\n");
 
                     //Método para verificar se existe alguma jogada possível com a carta atual
                     foreach (Carta carta in cartasDaMesa)
@@ -364,13 +364,14 @@ namespace TrabalhoAED
             string[] valores = { "Coringa", "Coringa", "Às", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito", "Nove", "Dez", "Dama", "Valete", "Rei" };
 
             Random rnd = new Random();
+
             for (int i = 0; i < quantidadeDeBaralhos; i++)
             {
                 int totalCartas = 0;
 
                 Stack<Carta> pilhaTemp = new Stack<Carta>();
 
-                while (totalCartas != 8)
+                while (totalCartas != 54)
                 {
                     int randomNaipe = rnd.Next(0, 4);
                     int randomValor = rnd.Next(0, 15);
