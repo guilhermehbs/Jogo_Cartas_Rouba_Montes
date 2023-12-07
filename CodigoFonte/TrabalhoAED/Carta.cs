@@ -13,13 +13,6 @@ namespace TrabalhoAED
         private string valor;
         private string naipe;
 
-        //Construtor para o coringa
-        public Carta(string valor)
-        {
-            this.valor = valor;
-            naipe = null;
-        }
-
         //Construtor das demais cartas
         public Carta(string valor, string naipe)
         {

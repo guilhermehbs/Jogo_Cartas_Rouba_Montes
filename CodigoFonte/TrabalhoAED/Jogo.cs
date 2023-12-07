@@ -59,7 +59,7 @@ namespace TrabalhoAED
 
             log.WriteLine("Cartas inseridas na mesa: ");
 
-            foreach(Carta carta in cartasDaMesa)
+            foreach (Carta carta in cartasDaMesa)
             {
                 log.WriteLine(carta);
             }
@@ -78,7 +78,7 @@ namespace TrabalhoAED
 
             log.WriteLine("Jogadores da partida: ");
 
-            foreach(Jogador jogador in listaDeJogadores)
+            foreach (Jogador jogador in listaDeJogadores)
             {
                 log.WriteLine(jogador);
             }
@@ -114,7 +114,7 @@ namespace TrabalhoAED
 
                     foreach (Jogador jogador in listaDeJogadores)
                     {
-                        Console.ForegroundColor= ConsoleColor.Cyan;
+                        Console.ForegroundColor = ConsoleColor.Cyan;
                         Console.WriteLine("\nTopo do jogador: " + jogador + "\n");
                         Console.ResetColor();
                         jogador.mostrarTopo();
@@ -137,13 +137,6 @@ namespace TrabalhoAED
                     Console.WriteLine("\nCarta atual: " + cartaAtual + "\n");
                     Console.ResetColor();
                     log.WriteLine($"Carta da rodada: {cartaAtual}");
-
-                    bool cartaCoringa = false;
-
-                    if(cartaAtual.getValor() == "Coringa")
-                    {
-                        cartaCoringa = true;
-                    }
 
                     bool existe1 = false;
                     bool existe2 = false;
@@ -170,7 +163,7 @@ namespace TrabalhoAED
                         }
                     }
 
-                    if(cartaAtual == jogadorAtual.getTopo())
+                    if (cartaAtual == jogadorAtual.getTopo())
                     {
                         existe3 = true;
                         break;
@@ -178,7 +171,7 @@ namespace TrabalhoAED
 
                     int opcao = 0;
 
-                    if (existe1 || existe2 || existe3 || cartaCoringa)
+                    if (existe1 || existe2 || existe3)
                     {
                         bool jogadaOk = false;
 
@@ -198,7 +191,7 @@ namespace TrabalhoAED
 
                                     Carta cartaDesejada = cartasDaMesa[opcaoCarta];
 
-                                    if (cartaDesejada.getValor() == cartaAtual.getValor() || cartaCoringa)
+                                    if (cartaDesejada.getValor() == cartaAtual.getValor())
                                     {
                                         jogadorAtual.adicionarCartas(cartaDesejada, cartaAtual);
                                         cartasDaMesa.Remove(cartaDesejada);
@@ -216,7 +209,7 @@ namespace TrabalhoAED
                                     string nomeJogadorRoubo = Console.ReadLine();
                                     Jogador jogadorRoubo = listaDeJogadores.Find(j => j.getNome() == nomeJogadorRoubo);
 
-                                    if (cartaAtual.getValor() == jogadorRoubo.getTopo().getValor() || cartaCoringa)
+                                    if (cartaAtual.getValor() == jogadorRoubo.getTopo().getValor())
                                     {
                                         jogadorAtual.adicionarMonte(jogadorRoubo.monteJogador);
                                         jogadorAtual.adicionarCarta(cartaAtual);
@@ -232,7 +225,7 @@ namespace TrabalhoAED
                                     break;
 
                                 case 3:
-                                    if (cartaAtual.getValor() == jogadorAtual.getTopo().getValor() || cartaCoringa)
+                                    if (cartaAtual.getValor() == jogadorAtual.getTopo().getValor())
                                     {
                                         jogadorAtual.adicionarCarta(cartaAtual);
                                         jogadaOk = true;
@@ -314,6 +307,7 @@ namespace TrabalhoAED
                         log.WriteLine($"Jogador: {listaDeJogadores[i].getNome()}");
                         log.WriteLine($"Posição na última partida: {i + 1}");
                         log.WriteLine($"Total de cartas na mão na ultima partida: {listaDeJogadores[i].getQuantidadeDeCartasNoMonte()}");
+                        log.WriteLine($"Ranking das últimas cinco partidas: {listaDeJogadores[i].ImprimirRanking()}");
                     }
 
                     Console.WriteLine("Jogador Campeão: " + jogadorCampeao);
@@ -361,7 +355,7 @@ namespace TrabalhoAED
 
             string[] naipes = { "Paus", "Espadas", "Copas", "Ouros" };
 
-            string[] valores = { "Coringa", "Coringa", "Às", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito", "Nove", "Dez", "Dama", "Valete", "Rei" };
+            string[] valores = { "Às", "Dois", "Três", "Quatro", "Cinco", "Seis", "Sete", "Oito", "Nove", "Dez", "Dama", "Valete", "Rei" };
 
             Random rnd = new Random();
 
@@ -371,21 +365,13 @@ namespace TrabalhoAED
 
                 Stack<Carta> pilhaTemp = new Stack<Carta>();
 
-                while (totalCartas != 54)
+                while (totalCartas != 52)
                 {
                     int randomNaipe = rnd.Next(0, 4);
-                    int randomValor = rnd.Next(0, 15);
+                    int randomValor = rnd.Next(0, 13);
 
-                    Carta carta;
 
-                    if (randomValor != 0 || randomValor != 1)
-                    {
-                        carta = new Carta(valores[randomValor], naipes[randomNaipe]);
-                    }
-                    else
-                    {
-                        carta = new Carta(valores[randomValor]);
-                    }
+                    Carta carta = new Carta(valores[randomValor], naipes[randomNaipe]);
 
                     if (!pilhaTemp.Contains(carta))
                     {

@@ -17,7 +17,7 @@ namespace TrabalhoAED
         public Queue<int> rankingUltimas5;
 
         //Construtor para o jogador
-        public Jogador(string nome) 
+        public Jogador(string nome)
         {
             this.nome = nome;
             this.rankingUltimas5 = new Queue<int>(5);
@@ -37,7 +37,7 @@ namespace TrabalhoAED
 
         public void adicionarMonte(Stack<Carta> monte)
         {
-                monteJogador.Push(monte.Pop());
+            monteJogador.Push(monte.Pop());
         }
 
         public void limparMonte()
@@ -88,6 +88,21 @@ namespace TrabalhoAED
         {
             this.posicao = posicao;
         }
+
+        public string ImprimirRanking()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("Ranking:");
+            foreach (int valor in rankingUltimas5)
+            {
+                sb.Append(valor).Append(", ");
+            }
+            sb.Length -= 2; // Remover a última vír
+                            // gula e espaço
+            return sb.ToString();
+        }
+
 
         public override string ToString()
         {
