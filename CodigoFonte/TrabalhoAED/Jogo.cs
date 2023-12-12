@@ -205,21 +205,34 @@ namespace TrabalhoAED
                                     break;
 
                                 case 2:
-                                    Console.Write("Digite o nome do jogador para roubar o monte: ");
-                                    string nomeJogadorRoubo = Console.ReadLine();
-                                    Jogador jogadorRoubo = listaDeJogadores.Find(j => j.getNome() == nomeJogadorRoubo);
+                                    bool achouJogador = false;
 
-                                    if (cartaAtual.getValor() == jogadorRoubo.getTopo().getValor())
+                                    while (!achouJogador)
                                     {
-                                        jogadorAtual.adicionarMonte(jogadorRoubo.monteJogador);
-                                        jogadorAtual.adicionarCarta(cartaAtual);
-                                        jogadorRoubo.limparMonte();
-                                        jogadaOk = true;
-                                        log.WriteLine($"Jogador: {jogadorAtual} roubou o monte do jogador: {jogadorRoubo}");
-                                    }
-                                    else
-                                    {
-                                        Console.WriteLine("A carta não é igual o monte do jogador selecionado");
+                                        Console.Write("Digite o nome do jogador para roubar o monte: ");
+                                        string nomeJogadorRoubo = Console.ReadLine();
+                                        Jogador jogadorRoubo = listaDeJogadores.Find(j => j.getNome() == nomeJogadorRoubo);
+
+                                        if (listaDeJogadores.Contains(jogadorRoubo))
+                                        {
+                                            achouJogador = true;
+                                            if (cartaAtual.getValor() == jogadorRoubo.getTopo().getValor())
+                                            {
+                                                jogadorAtual.adicionarMonte(jogadorRoubo.monteJogador);
+                                                jogadorAtual.adicionarCarta(cartaAtual);
+                                                jogadorRoubo.limparMonte();
+                                                jogadaOk = true;
+                                                log.WriteLine($"Jogador: {jogadorAtual} roubou o monte do jogador: {jogadorRoubo}");
+                                            }
+                                            else
+                                            {
+                                                Console.WriteLine("A carta não é igual o monte do jogador selecionado");
+                                            }
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine("Jogador não encontrado, digite novamente");
+                                        }
                                     }
 
                                     break;
