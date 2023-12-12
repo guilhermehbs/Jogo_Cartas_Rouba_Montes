@@ -1,8 +1,8 @@
-***************
+==============================
 Jogador: yago
 Posição na última partida: 1
-Total de cartas na mão na ultima partida: 1
-***************
-Jogador: pele
+Total de cartas na mão na ultima partida: 6
+==============================
+Jogador: cleiton
 Posição na última partida: 2
-Total de cartas na mão na ultima partida: 0
+Total de cartas na mão na ultima partida: 3

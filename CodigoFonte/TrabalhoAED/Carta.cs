@@ -13,7 +13,7 @@ namespace TrabalhoAED
         private string valor;
         private string naipe;
 
-        //Construtor das demais cartas
+        //Construtor das cartas
         public Carta(string valor, string naipe)
         {
             this.valor = valor;
