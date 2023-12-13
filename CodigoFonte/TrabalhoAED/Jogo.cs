@@ -294,19 +294,27 @@ namespace TrabalhoAED
                                     break;
 
                                 case 3:
-                                    if (cartaAtual.getValor() == jogadorAtual.getTopo().getValor())
+                                    if (jogadorAtual.getTopo() != null) 
                                     {
-                                        jogadorAtual.adicionarCarta(cartaAtual);
-                                        jogadaOk = true;
-                                        log.WriteLine($"Jogador: {jogadorAtual} adicionou a carta: {cartaAtual} em seu monte\n");
+                                        if (cartaAtual.getValor() == jogadorAtual.getTopo().getValor())
+                                        {
+                                            jogadorAtual.adicionarCarta(cartaAtual);
+                                            jogadaOk = true;
+                                            log.WriteLine($"Jogador: {jogadorAtual} adicionou a carta: {cartaAtual} em seu monte\n");
+                                        }
+                                        else
+                                        {
+                                            Console.ForegroundColor = ConsoleColor.Red;
+                                            Console.WriteLine("\nA carta do topo é diferente da atual\n");
+                                            log.WriteLine("\nA carta do topo é diferente da atual\n");
+                                            Console.ResetColor();
+
+                                        }
                                     }
                                     else
                                     {
-                                        Console.ForegroundColor = ConsoleColor.Red;
-                                        Console.WriteLine("\nO topo do monte está vazio ou a carta do topo é diferente da atual\n");
-                                        log.WriteLine("O topo do monte está vazio ou a carta do topo é diferente da atual\n");
-                                        Console.ResetColor();
-
+                                        Console.WriteLine("\nO topo do monte está vazio\n");
+                                        log.WriteLine("\nO topo do monte está vazio\n");
                                     }
                                     break;
 

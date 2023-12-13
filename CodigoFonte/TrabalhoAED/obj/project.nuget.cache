@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "SX2/R8gssNfNd+J9i/SlHX9qLLQRIcz5j1lrZqBAsI0RYHKn1heDwpYit5QjWjvbN/ZlfAGUsf+EaRVzabBSbg==",
+  "dgSpecHash": "KwGDFbCUJv6VKd4DMcLcA5uqfGiPKtqlDvQseY/BxUec+Qpa/Ova4/Qq5s2sAFtOqANEspCb9VXVhvMGXeIS/A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\User\\Documents\\Estudos\\TrabalhoAED\\CodigoFonte\\TrabalhoAED\\TrabalhoAED.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\gui10\\OneDrive\\Documentos\\Jogo_Cartas_Rouba_Montes\\CodigoFonte\\TrabalhoAED\\TrabalhoAED.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gui10\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\gui10\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\gui10\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",
+    "C:\\Users\\gui10\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.25\\microsoft.netcore.app.host.win-x64.6.0.25.nupkg.sha512"
+  ],
   "logs": []
 }

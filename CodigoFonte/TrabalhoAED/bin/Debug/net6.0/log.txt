@@ -1,173 +1,187 @@
 O jogo foi criado com 54 cartas
+
 Total de jogadores do jogo: 2
-Cartas inseridas na mesa: 
-Valor: Oito || Naipe: Ouros
-Valor: Sete || Naipe: Paus
-Valor: Oito || Naipe: Espadas
-Valor: Dois || Naipe: Espadas
-Jogadores da partida: 
-cleiton
+
+Cartas inseridas na mesa:
+Valor: Nove || Naipe: Copas
+Valor: Às || Naipe: Espadas
+Valor: Nove || Naipe: Paus
+Valor: Rei || Naipe: Espadas
+Jogadores da partida:
 yago
-Carta: Valor: Sete || Naipe: Ouros foi adicionada no monte do cleiton
+pele
+
+Carta: Valor: Nove || Naipe: Ouros foi adicionada no monte do yago
+
+Jogador a jogar: pele
+
+
+Cartas na mesa:
+Valor: Nove || Naipe: Copas
+Valor: Às || Naipe: Espadas
+Valor: Nove || Naipe: Paus
+Valor: Rei || Naipe: Espadas
+----------------------------------------
+
+Topo do jogador: yago
+
+----------------------------------------
+
+Topo do jogador: pele
+
+Carta da rodada: Valor: Oito || Naipe: Ouros
+
+
+Jogador: pele perdeu sua vez, pois com a carta: Valor: Oito || Naipe: Ouros não foi possível fazer nenhuma jogada
+
 Jogador a jogar: yago
 
-Cartas na mesa: 
+
+Cartas na mesa:
+Valor: Nove || Naipe: Copas
+Valor: Às || Naipe: Espadas
+Valor: Nove || Naipe: Paus
+Valor: Rei || Naipe: Espadas
 Valor: Oito || Naipe: Ouros
-Valor: Sete || Naipe: Paus
-Valor: Oito || Naipe: Espadas
-Valor: Dois || Naipe: Espadas
-----------------------------------------
-
-Topo do jogador: cleiton
-
 ----------------------------------------
 
 Topo do jogador: yago
 
-Carta da rodada: Valor: Dez || Naipe: Ouros
-Jogador: yago perdeu sua vez, pois com a carta: Valor: Dez || Naipe: Ouros não foi possível fazer nenhuma jogada
-Jogador a jogar: cleiton
-
-Cartas na mesa: 
-Valor: Oito || Naipe: Ouros
-Valor: Sete || Naipe: Paus
-Valor: Oito || Naipe: Espadas
-Valor: Dois || Naipe: Espadas
-Valor: Dez || Naipe: Ouros
 ----------------------------------------
 
-Topo do jogador: cleiton
+Topo do jogador: pele
 
+Carta da rodada: Valor: Três || Naipe: Paus
+
+
+Jogador: yago perdeu sua vez, pois com a carta: Valor: Três || Naipe: Paus não foi possível fazer nenhuma jogada
+
+Jogador a jogar: pele
+
+
+Cartas na mesa:
+Valor: Nove || Naipe: Copas
+Valor: Às || Naipe: Espadas
+Valor: Nove || Naipe: Paus
+Valor: Rei || Naipe: Espadas
+Valor: Oito || Naipe: Ouros
+Valor: Três || Naipe: Paus
 ----------------------------------------
 
 Topo do jogador: yago
 
-Carta da rodada: Valor: Às || Naipe: Copas
-Jogador: cleiton perdeu sua vez, pois com a carta: Valor: Às || Naipe: Copas não foi possível fazer nenhuma jogada
+----------------------------------------
+
+Topo do jogador: pele
+
+Carta da rodada: Valor: Cinco || Naipe: Paus
+
+
+Jogador: pele perdeu sua vez, pois com a carta: Valor: Cinco || Naipe: Paus não foi possível fazer nenhuma jogada
+
 Jogador a jogar: yago
 
-Cartas na mesa: 
+
+Cartas na mesa:
+Valor: Nove || Naipe: Copas
+Valor: Às || Naipe: Espadas
+Valor: Nove || Naipe: Paus
+Valor: Rei || Naipe: Espadas
 Valor: Oito || Naipe: Ouros
-Valor: Sete || Naipe: Paus
-Valor: Oito || Naipe: Espadas
-Valor: Dois || Naipe: Espadas
-Valor: Dez || Naipe: Ouros
-Valor: Às || Naipe: Copas
-----------------------------------------
-
-Topo do jogador: cleiton
-
+Valor: Três || Naipe: Paus
+Valor: Cinco || Naipe: Paus
 ----------------------------------------
 
 Topo do jogador: yago
 
-Carta da rodada: Valor: Oito || Naipe: Copas
 ----------------------------------------
+
+Topo do jogador: pele
+
+Carta da rodada: Valor: Dama || Naipe: Paus
+
+
+Jogador: yago perdeu sua vez, pois com a carta: Valor: Dama || Naipe: Paus não foi possível fazer nenhuma jogada
+
+Jogador a jogar: pele
+
+
+Cartas na mesa:
+Valor: Nove || Naipe: Copas
+Valor: Às || Naipe: Espadas
+Valor: Nove || Naipe: Paus
+Valor: Rei || Naipe: Espadas
+Valor: Oito || Naipe: Ouros
+Valor: Três || Naipe: Paus
+Valor: Cinco || Naipe: Paus
+Valor: Dama || Naipe: Paus
+----------------------------------------
+
+Topo do jogador: yago
+
+----------------------------------------
+
+Topo do jogador: pele
+
+Carta da rodada: Valor: Seis || Naipe: Copas
+
+
+Jogador: pele perdeu sua vez, pois com a carta: Valor: Seis || Naipe: Copas não foi possível fazer nenhuma jogada
+
+Jogador a jogar: yago
+
+
+Cartas na mesa:
+Valor: Nove || Naipe: Copas
+Valor: Às || Naipe: Espadas
+Valor: Nove || Naipe: Paus
+Valor: Rei || Naipe: Espadas
+Valor: Oito || Naipe: Ouros
+Valor: Três || Naipe: Paus
+Valor: Cinco || Naipe: Paus
+Valor: Dama || Naipe: Paus
+Valor: Seis || Naipe: Copas
+----------------------------------------
+
+Topo do jogador: yago
+
+----------------------------------------
+
+Topo do jogador: pele
+
+Carta da rodada: Valor: Dama || Naipe: Espadas
+
+----------------------------------------
+
+Menu:
+1 - Formar monte com carta na mesa
+2 - Roubar monte de um jogador
+3 - Adicionar carta no topo do próprio monte
+Opção escolhida: 3
+
+
+A carta do topo é diferente da atual
+
+----------------------------------------
+
 Menu:
 1 - Formar monte com carta na mesa
 2 - Roubar monte de um jogador
 3 - Adicionar carta no topo do próprio monte
 Opção escolhida: 1
-Opção 1: Valor: Oito || Naipe: Ouros
-Opção 2: Valor: Sete || Naipe: Paus
-Opção 3: Valor: Oito || Naipe: Espadas
-Opção 4: Valor: Dois || Naipe: Espadas
-Opção 5: Valor: Dez || Naipe: Ouros
-Opção 6: Valor: Às || Naipe: Copas
-Opção escolhida: 3
-Jogador: yago adicionou as cartas Valor: Oito || Naipe: Copas, Valor: Oito || Naipe: Espadas em seu monte
 
-Cartas na mesa: 
-Valor: Oito || Naipe: Ouros
-Valor: Sete || Naipe: Paus
-Valor: Dois || Naipe: Espadas
-Valor: Dez || Naipe: Ouros
-Valor: Às || Naipe: Copas
-----------------------------------------
+Opção 1: Valor: Nove || Naipe: Copas
 
-Topo do jogador: cleiton
+Opção 2: Valor: Às || Naipe: Espadas
 
-----------------------------------------
+Opção 3: Valor: Nove || Naipe: Paus
 
-Topo do jogador: yago
+Opção 4: Valor: Rei || Naipe: Espadas
 
-Carta da rodada: Valor: Cinco || Naipe: Ouros
-Jogador: yago perdeu sua vez, pois com a carta: Valor: Cinco || Naipe: Ouros não foi possível fazer nenhuma jogada
-Jogador a jogar: cleiton
+Opção 5: Valor: Oito || Naipe: Ouros
 
-Cartas na mesa: 
-Valor: Oito || Naipe: Ouros
-Valor: Sete || Naipe: Paus
-Valor: Dois || Naipe: Espadas
-Valor: Dez || Naipe: Ouros
-Valor: Às || Naipe: Copas
-Valor: Cinco || Naipe: Ouros
-----------------------------------------
+Opção 6: Valor: Três || Naipe: Paus
 
-Topo do jogador: cleiton
+Opção 7: Valor: Cinco || Naipe: Paus
 
-----------------------------------------
-
-Topo do jogador: yago
-
-Carta da rodada: Valor: Dois || Naipe: Ouros
-----------------------------------------
-Menu:
-1 - Formar monte com carta na mesa
-2 - Roubar monte de um jogador
-3 - Adicionar carta no topo do próprio monte
-Opção escolhida: 1
-Opção 1: Valor: Oito || Naipe: Ouros
-Opção 2: Valor: Sete || Naipe: Paus
-Opção 3: Valor: Dois || Naipe: Espadas
-Opção 4: Valor: Dez || Naipe: Ouros
-Opção 5: Valor: Às || Naipe: Copas
-Opção 6: Valor: Cinco || Naipe: Ouros
-Opção escolhida: 3
-Jogador: cleiton adicionou as cartas Valor: Dois || Naipe: Ouros, Valor: Dois || Naipe: Espadas em seu monte
-
-Cartas na mesa: 
-Valor: Oito || Naipe: Ouros
-Valor: Sete || Naipe: Paus
-Valor: Dez || Naipe: Ouros
-Valor: Às || Naipe: Copas
-Valor: Cinco || Naipe: Ouros
-----------------------------------------
-
-Topo do jogador: cleiton
-
-----------------------------------------
-
-Topo do jogador: yago
-
-Jogo acabou
-Estatísticas da partida: 
-==============================
-Jogador: yago
-Posição na última partida: 1
-Total de cartas na mão na ultima partida: 6
-Ranking das últimas cinco partidas: Ranking:
-1, 1
-==============================
-Jogador: cleiton
-Posição na última partida: 2
-Total de cartas na mão na ultima partida: 3
-Ranking das últimas cinco partidas: Ranking:
-2
-
-Jogador Campeão: yago
-
-
-Posição: 1
-
-
-Quantidade de cartas na mão: 6
-
-
-Cartas no monte ordenada:
-Valor: Cinco || Naipe: Copas
-Valor: Cinco || Naipe: Espadas
-Valor: Oito || Naipe: Copas
-Valor: Oito || Naipe: Espadas
-Valor: Oito || Naipe: Espadas
-Valor: Oito || Naipe: Ouros
+Opção 
