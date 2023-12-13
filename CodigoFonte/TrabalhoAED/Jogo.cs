@@ -11,13 +11,13 @@ namespace TrabalhoAED
 {
     class Jogo
     {
-
         static Stack<Carta> baralho;
         static Queue<Jogador> filaDeJogadores;
         List<Jogador> lendasQueJaJogaram = new List<Jogador>();
 
         int quantidadeDeJogadores;
         int quantidadeDeBaralhos;
+
         StreamWriter log = new StreamWriter("log.txt");
 
         // Construtor usado para gerar um novo jogo, que vai gerar as cartas e a fila de jogadores
